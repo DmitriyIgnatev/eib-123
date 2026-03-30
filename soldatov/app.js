@@ -10,8 +10,6 @@ let audioOn=true;
 let cycleTimer=null;
 let phase='day';
 
-function log(msg){ console.log('[moonie]', msg); }
-
 function setAppHeight(){ appEl.style.height=`${window.innerHeight}px`; }
 window.addEventListener('resize', setAppHeight);
 setAppHeight();
@@ -58,7 +56,6 @@ function setDay(){
   fade(dayAudio, dayAudio?.volume||0.01, 0.85, 4000);
   fade(nightAudio, nightAudio?.volume||0.2, 0.0, 2500);
   setTimeout(()=>nightAudio?.pause(), 2600);
-  log('phase=day');
 }
 
 function setNight(){
@@ -71,7 +68,6 @@ function setNight(){
   fade(nightAudio, nightAudio?.volume||0.01, 0.85, 4000);
   fade(dayAudio, dayAudio?.volume||0.2, 0.0, 2500);
   setTimeout(()=>dayAudio?.pause(), 2600);
-  log('phase=night');
 }
 
 function startCycle(){
@@ -81,7 +77,6 @@ function startCycle(){
     if(phase==='day') setNight();
     else setDay();
   }, 30000);
-  log('cycle started');
 }
 
 function stopCycle(){
@@ -106,7 +101,6 @@ function unlockAudio(){
   if(dayAudio){ dayAudio.play().then(()=>dayAudio.pause()).catch(()=>{}); }
   if(nightAudio){ nightAudio.play().then(()=>nightAudio.pause()).catch(()=>{}); }
   if(clickAudio){ clickAudio.volume=0.65; }
-  log('audio unlocked');
 }
 
 function clickTone(){
@@ -126,7 +120,6 @@ document.getElementById('audioToggle')?.addEventListener('click',()=>{
   if(!audioOn) stopAllAudio();
   else if(index===celestialIndex){ phase==='day' ? setDay() : setNight(); }
   clickTone();
-  log('audioOn='+audioOn);
 });
 
 const firstGesture=()=>{

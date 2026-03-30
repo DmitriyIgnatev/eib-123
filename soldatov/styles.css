@@ -48,7 +48,6 @@ li{background:rgba(255,255,255,.06);padding:10px 12px;border-radius:999px;font-s
 .dot.active{width:20px;border-radius:99px;background:#fff}
 .audio-toggle{position:absolute;right:clamp(10px,3vw,16px);top:max(10px,env(safe-area-inset-top));z-index:5;border:none;border-radius:12px;padding:8px 10px;background:rgba(255,255,255,.08);color:#fff;font-size:18px}
 
-/* Full-screen day/night scene */
 .celestial{overflow:hidden}
 .sky-full{position:absolute;inset:0;z-index:0;animation:skyPhase 60s linear infinite;overflow:hidden;pointer-events:none}
 .celestial h1,.celestial p,.celestial .primary{position:relative;z-index:3}
@@ -86,7 +85,6 @@ li{background:rgba(255,255,255,.06);padding:10px 12px;border-radius:999px;font-s
   100%{left:104%; top:82%; opacity:0}
 }
 
-/* Small phones (SE/mini) */
 @media (max-width: 375px){
   .screen{bottom:80px}
   h2{font-size:clamp(24px,8vw,34px)}
@@ -95,7 +93,6 @@ li{background:rgba(255,255,255,.06);padding:10px 12px;border-radius:999px;font-s
   .chips{gap:8px}
 }
 
-/* Large phones (Pro Max, Ultra) */
 @media (min-width: 430px){
   .screen{left:18px;right:18px}
   .bottom-nav{left:18px;right:18px}
